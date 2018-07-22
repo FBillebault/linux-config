@@ -66,6 +66,7 @@ ENABLE_CORRECTION="true"
 plugins=(
   git
   zsh-autosuggestions
+  colored-man-pages
   zsh-syntax-highlighting
 )
 
