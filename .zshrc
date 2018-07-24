@@ -11,6 +11,24 @@ export TERM="xterm-256color"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+POWERLEVEL9K_TIME_FORMAT="%D{\ue383 %H:%M \uf073 %d.%m.%y}"
+
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon ssh context root_indicator dir dir_writable vcs)
+else
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator dir dir_writable vcs)
+fi
+
+POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=232
+POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND=178
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs time battery)
+
+
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
